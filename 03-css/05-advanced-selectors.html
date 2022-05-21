@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Selectors</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        p > span {
+            color: rgb(238, 241, 19);
+            background-color: rgb(14, 190, 58);
+            padding: 10px;
+        }
+        h2 + h3 + h3 {
+            color: rgb(180, 78, 228);
+            background-color: rgb(66, 62, 66);
+        }
+        a[class] {
+            color: rgb(238, 241, 19);
+            background-color: rgb(14, 190, 58);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="./">⬅️</a>Advanced Selectors</h1>
+        </header>
+        <section>
+            <h2>Children:</h2>
+            <p> 
+                <span>Text one</span>
+            </p>
+            <p> 
+                <div href="">
+                    <spdivn>Text Two</spdivn>
+                </div>
+            </p>
+            <h2>Adjacent:</h2>
+            <h3>lorem Ipdum Dolor</h3>
+            <h3>lorem Ipdum Dolor</h3>
+            <h2>Attributes:</h2>
+            <a href="http://www.google.com"> Go to Google</a> &nbsp;|&nbsp;
+            <a href="http://www.google.com" class="active"> Go to Google</a> &nbsp;
+            <a href="http://www.google.com"> Go to Google</a> 
+        </section>
+    </main>
+</body>
+</html>

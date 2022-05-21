@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge calculator</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="shortcut icon" href="images/JavaScript.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+        body{
+            font-family: 'Koulen', cursive;
+        }
+
+        header {
+            font-size: 1.6rem;
+            line-height: 3.8rem;
+        }
+        div.calculator {
+            
+            margin: 40px auto;
+            width: 305px;
+        }
+
+        header.display{
+            background: url(images/calculator/marco.svg) no-repeat;
+            height: 94px;
+            position: relative;
+            width: 305px;
+        }
+
+        header.display input.value{
+            background: none;
+            border: none;
+            width: 280px;
+            color: rgb(191, 193, 196);
+            outline: none;
+            font-size: 24px;
+            font-style: normal;
+            position: absolute;
+            text-align: right;
+            right: 10px;
+            top: 18px;
+        }
+
+        section.buttons {
+            
+            grid-template-columns: repeat(auto-fit, minmax(62px, 1fr));
+            row-gap: 23px;
+            margin: 15px 0;
+           
+        }
+
+        section.buttons button {
+            margin-left: 9px;
+            height: 62px;
+            width: 61px;
+            border: none;
+            transition: transform 0.2s ease;
+        }
+
+        section.buttons button:hover {
+            transform: scale(1.10);
+        }
+
+        section.buttons button.btn-cerol {
+            background: url(images/calculator/cero.svg) no-repeat center;
+            cursor: pointer;
+            width: 135px;
+        }
+
+        button.btn-ac {
+            background: url(images/calculator/AC.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-borrar {
+            background: url(images/calculator/borrar.svg) no-repeat center;
+            cursor: pointer;
+        }
+
+        button.btn-porcentaje {
+            background: url(images/calculator/porcentaje.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-dividir {
+            background: url(images/calculator/dividir.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-siete {
+            background: url(images/calculator/siete.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-ocho {
+            background: url(images/calculator/ocho.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-nueve {
+            background: url(images/calculator/nueve.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-multiplicar {
+            background: url(images/calculator/multiplicar.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-cuatro {
+            background: url(images/calculator/cuatro.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-cinco {
+            background: url(images/calculator/cinco.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-seis {
+            background: url(images/calculator/seis.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-menos {
+            background: url(images/calculator/menos.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-uno {
+            background: url(images/calculator/uno.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-dos {
+            background: url(images/calculator/dos.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-tres {
+            background: url(images/calculator/tres.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-mas {
+            background: url(images/calculator/mas.svg) no-repeat center;
+            cursor: pointer;
+        }
+    
+        button.btn-coma {
+            background: url(images/calculator/coma.svg) no-repeat center;
+            cursor: pointer;
+        }
+        button.btn-igual {
+            background: url(images/calculator/igual.svg) no-repeat center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+            </a>
+            <h1>Challenge calculator</h1>
+        </header>
+        <section>
+        <div class="calculator">
+            <header class="display">
+                <input class="value" readonly>
+            </header>
+            <section class="buttons">
+                <button class="btn-ac"></button>
+                <button class="btn-borrar"></button>
+                <button class="btn-porcentaje"  data-opr="%"></button>
+                <button class="btn-dividir"     data-opr="/"></button>
+                <button class="btn-siete"       data-num="7"></button>
+                <button class="btn-ocho"        data-num="8"></button>
+                <button class="btn-nueve"       data-num="9"></button>
+                <button class="btn-multiplicar" data-opr="X"></button>
+                <button class="btn-cuatro"      data-num="4"></button>
+                <button class="btn-cinco"       data-num="5"></button>
+                <button class="btn-seis"        data-num="6"></button>
+                <button class="btn-menos"       data-opr="-"></button>
+                <button class="btn-uno"         data-num="1"></button>
+                <button class="btn-dos"         data-num="2"></button>
+                <button class="btn-tres"        data-num="3"></button>
+                <button class="btn-mas"         data-opr="+"></button>
+                <button class="btn-cerol"       data-num="0"></button>
+                <button class="btn-coma"        data-opr=","></button>
+                <button class="btn-igual"></button>
+            </section>
+        </div>
+        </section>
+    </main>
+    <script>
+        
+        // Value in Display
+        const display = document.querySelector('input.value')
+        // Buttons
+        const btnac = document.querySelector('button.btn-ac')
+        const borrar = document.querySelector('button.btn-borrar')
+        const btnigual = document.querySelector('button.btn-igual')
+        // All Numbers & Operators
+        const btnNumbers = document.querySelectorAll('button[data-num]')
+        const btnOperators = document.querySelectorAll('button[data-opr]')
+        
+        // Activate click Event in all numbers & operators
+        for (let i = 0; i < btnNumbers.length; i++) {
+            btnNumbers[i].onclick = function() {
+                operStatus = true
+                addToDisplay(this.getAttribute('data-num'))
+            }
+            
+        }
+
+        for (let i = 0; i < btnOperators.length; i++) {
+            btnOperators[i].onclick = function() {
+                if(operStatus){
+                    addToDisplay(this.getAttribute('data-opr'))
+                    operStatus = false
+                }
+                
+            }
+        }
+        //Functions
+        function validateLength(){
+            if(display.value.length < 20){
+                return true
+            } else {
+                return false
+            }
+        }
+        function addToDisplay(c){
+            if(validateLength()){
+                display.value+=c
+            }
+        }
+
+         // Actions
+         document.onkeyup = (evt) => {
+
+            switch (evt.keyCode) {
+
+                case 8:
+                    delateLastValue()
+                    break;
+                case 13:
+                   showResult()
+                    break;
+                case 107:
+                    display.value += '+'
+                    break;
+                    case 109:
+                    display.value += '-'
+                    break;
+                    case 106:
+                    display.value += '*'
+                    break;
+                    case 111:
+                    display.value += '/'
+                    break;
+                    case 110:
+                    display.value += '.'
+                    break;
+                
+                case 96:
+                case 48:
+                    display.value += 0
+                    break;
+                case 97:
+                case 49:
+                    display.value += 1
+                    break;
+                case 98:
+                case 50:
+                    display.value += 2
+                    break;
+                case 99:
+                case 51:
+                    display.value += 3
+                    break;
+                case 46:
+                    clearDisplay()
+                    break;
+                case 100:
+                case 52:
+                    display.value += 4
+                    break;
+                case 101:
+                case 53:
+                    display.value += 5
+                    break;
+                case 102:
+                case 54:
+                    display.value += 6
+                    break;
+                case 103:
+                case 55:
+                    display.value += 7
+                    break;
+                case 104:
+                case 56:
+                    display.value += 8
+                    break;
+                case 105:
+                case 57:
+                    display.value += 9
+                    break;
+                default:
+                    break;
+            }
+        }
+
+         btnac.onclick = () => {
+            display.value = ''
+            operStatus = false
+        }
+        borrar.onclick = () => {
+            delateLastValue()
+        }
+        function clearDisplay() {
+            display.value = ''
+            operStatus = false
+        }
+        btnigual.onclick=()=> {
+            igual()
+        }
+        function igual() {
+            display.value=(eval(display.value))
+        }
+
+        function delateLastValue(c) {
+            display.value = display.value.slice(0, -1)
+            if (isNaN(display.value.slice(-1))) {
+                operStatus = false
+            }else {
+                operStatus = true
+            }
+        }
+
+        // CLASES
+        class calculator {
+            sumar(num1, num2) {
+                return num1 + num2
+            }
+        }
+    </script>
+</body>
+</html>

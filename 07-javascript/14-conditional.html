@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="shortcut icon" href="images/JavaScript.png">
+    <style>
+        input, button {
+            border: none;
+            border-radius: 20px;
+            display: block;
+            padding: 10px;
+            margin: 10px auto;
+            width: 250px;
+        }
+        button {
+            background-color: #272727;
+            font-size: 0.8rem;
+            color: aqua;
+            width: 220px;
+        }
+        hr {
+            margin-top: 20px;
+            border: 1px solid #f3f2f2;
+        }
+        h3 {
+            background-color: #272727;
+            border: 1px dotted #fff;
+            font-size: 16px;
+            margin: 20px 10px;
+            padding: 20px 10px;
+        }
+        h4 {
+            background-color: #272727;
+            border: 1px dotted #fff;
+            font-size: 16px;
+            margin: 20px 10px;
+            padding: 20px 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+            </a>
+            <h1>Conditional</h1>
+        </header>
+        <section>
+            <h3>How much is: 4*5/2 ?</h3>
+            <input type="number" class="answer">
+            <button>Validate</button>
+            <hr>
+            <h4 class="today"></h4>
+        </section>
+    </main>
+    <script>
+        // Texto Para Salir en la console
+        /*let x = 10
+        if (x == 10)
+        console.log('Yes')
+        console.log('Lorem ipsum')*/
+        const answer = document.querySelector('input')
+        const button = document.querySelector('button')
+        const hora =  document.querySelector('h4.today')
+
+        // Actions
+        button.onclick = () => {
+            let val = answer.value;
+            // Conditional
+            if (val != '') {  
+                if (parseInt(val) === 10) {
+                    alert('Congratulations: Its Coreect!')
+                } else {
+                    alert('Sorry: Its incorrect!')
+                }
+
+            } else {
+                window.alert('Please, Enter answer!')
+            }
+        }
+
+        //--------
+        var today = new Date
+        switch (today.getDay()) {
+            case 1:
+                hora.innerText = 'Monday 😴'
+                break;
+            case 2:
+                hora.innerText = 'Thuesday 🥱'
+                break;
+            case 3:
+                hora.innerText = 'Wednesday 😫'
+                break;
+            case 4:
+                hora.innerText = 'Thursday 😪'
+                break;
+            case 5:
+                hora.innerText = 'Friday 🥳'
+                break;       
+            default:
+                hora.innerText = 'Weekend 🤯'
+                break;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background Gradient</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        div.box {
+            border: 2px solid #08313b;
+            height: 200px;
+            margin: 20px auto;
+            width: 380px;
+        }
+        div.box1 {
+            background: linear-gradient(to top, #00ffc8, #f006a2);
+        }
+        div.box2 {
+            background: linear-gradient(45deg, #00ffc8, #f006a2);
+        }
+        div.box3 {
+            background: linear-gradient(green 40%, white 40%, white 70%, red 70%);
+        }
+        div.box4 {
+            background: linear-gradient(to right, rgb(2, 159, 250) 50%, white 0%);
+            background-size: 30px 100%;
+        }
+        div.box5 {
+            background: radial-gradient(circle, white, #ff6600);
+        }
+        div.box6 {
+            background: radial-gradient(circle, red 10%,
+                                                 white 10%,
+                                                  white 20%, 
+                                                  white 20%,
+                                                  red 30%,
+                                                  white 30%, 
+                                                  red 40%,
+                                                  white 40%, 
+                                                  white 40%);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="index.html">👨‍🦽💨</a>background Gradient</h1>
+        </header>
+        <section>
+            <h2>Linear-Gradient(to top, Color1, Color2</h2>
+            <div class="box box1"></div>
+            <h2>Linear-Gradient(45deg, Color1, Color2)</h2>
+            <div class="box box2"></div>
+            <h2>Italy Flag</h2>
+            <div class="box box3"></div>
+            <h2>Vertical lines</h2>
+            <div class="box box4"></div>
+            <h2>Radial-Gradient(circle, peru, crimson)</h2>
+            <div class="box box5"></div>
+            <h2>Vertical shoot</h2>
+            <div class="box box6"></div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Source+Sans+Pro:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+}
+*::-webkit-scrollbar {
+    width: 12px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background-color: rgba(16, 16, 16, 0.827);
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #1e9277;
+    background-image:-webkit-linear-gradient(45deg,#ffffff4d 20%,transparent 20%,transparent 40%,#ffffff4d 40%,#ffffff4d 60%,transparent 60%,transparent 80%,#ffffff4d 80%);
+    border-radius: 10px;
+  }
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #1E1E1E;
+}
+
+/*HEADER SUPERIOR*/
+
+.header__superior {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px;
+}
+
+.logo img {
+    height: 145px;
+    width: 160px;
+}
+
+.search input {
+    font-size: 17px;
+    width: 280px;
+    padding: 10px;
+    background-color: #232323;
+    border: none;
+    color: #fff;
+}
+
+/*BARRA MENU*/
+.container__menu {
+    width: 100%;
+    height: 70px;
+    background-color: #232323;
+    padding: 0px 20px;
+}
+
+.menu {
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+}
+nav {
+    height: 100%;
+}
+nav > ul {
+    height: 100%;
+    display: flex;
+}
+
+nav > ul > li{
+    height: 100%;
+    list-style: none;
+    position: relative;
+}
+
+nav > ul > li:first-child > a {
+    background-image: url(../img/hogar.png);
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px 40px;
+}
+nav > ul > li:first-child:hover > a {
+    background-image: url(../img/hogar.png);
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+nav > ul > li > a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    color: #64FFDA;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: all 300ms ease;
+}
+
+nav > ul > li > a:hover {
+    transform: scale(1.1);
+    background-color: #1E1E1E;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+#selected {
+    transform: scale(1.1);
+    background-color: #1d1c1c;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+/*ARTICULO*/
+
+Main{
+    background: #1E1E1E;
+    padding: 16px 20px;
+    margin-top: 250px;
+}
+
+article{
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 40px;
+    background: #232323;
+}
+
+article p{
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+h2 {
+    color: #64FFDA;
+}
+
+p {
+    color: #eeeeee;
+}
+
+/* ELEMENTOS RESPONSIVE*/
+
+.icon__menu {
+    font-size: 26px;
+    color: #000000;
+    cursor: pointer;
+    width: 26px;
+    height: 100%;
+    display: none;
+    align-items: center;
+}
+
+svg {
+    margin-top: 15px;
+    color: #64FFDA;
+}
+
+#label__check{
+    width: 40px;
+    height: 100%;
+    display: none;
+}
+
+#check__menu{
+    display: none;
+}
+
+@media screen and (max-width: 720px) {
+    .search input{
+        display: none;
+    }
+
+    .header__superior{
+        padding: 28px;
+    }
+
+    .logo img{
+        height: 130px;
+        width: 145px;
+    }
+    nav > ul {
+        flex-direction: column;
+        background-color: #1E1E1E;
+        position: fixed;
+        left: 0;
+        top: 180px;
+        width: 100%;
+        height: 0px;
+        transition: all 300ms ease-in-out;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+    
+    }
+    nav > ul > li > a:hover {
+        transform: scale(1);
+    }
+
+    nav ul li ul{
+        left: 90px;
+    }
+
+    nav > ul > li:hover ul{
+        top: 50px;
+    }
+    
+    nav > ul > li:first-child a{
+        background-position: 20px;
+    }
+
+    #selected {
+        transform: scale(1);
+    }
+
+    #label__check{
+        display: block;
+    }
+    
+    .icon__menu{
+        display: flex;
+        
+    }
+
+    #check__menu:checked ~ nav > ul {
+        height: 420px;
+        visibility: visible;
+        opacity: 1;
+    }
+    main {
+        margin-top: 260px;
+    }
+
+} 

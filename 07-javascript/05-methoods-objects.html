@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methoods Object</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="shortcut icon" href="images/JavaScript.png">
+    <style>
+        figure {
+            text-align: center;
+        }
+        ol {
+            color: aliceblue;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+            </a>
+            <h1>Method Object</h1>
+        </header>
+        <section>
+            <h3 class="tname"></h3>
+            <figure>
+                <img src="" class="timage">  
+            </figure>
+            <ol class="tmoves"></ol>
+        </section>
+    </main>
+    <script>
+        //Elements
+        let tname = document.querySelector('h3.tname')
+        let timage = document.querySelector('img.timage')
+        let tmoves = document.querySelector('ol.tmoves')
+        //object
+        const pokemon = {
+            name: 'Bulbasaur',
+            type: 'Grass',
+            hp: 50,
+            image: 'https://www.serebii.net/pokemongo/pokemon/002.png',
+            //Methods
+            feed: function() {
+                this.hp += 10
+            },
+            attack: function() {
+                if (this.hp <= 0) {
+                    return this.name + 'Its Dead'
+                } else {
+                    this.hp -= 10
+                }
+            }
+        }
+        //output
+        tname.innerText = pokemon.name + '          ('+pokemon.type+')'
+        timage.setAttribute('src', pokemon.image)
+        tmoves.innerHTML='<li> hp: '+pokemon.hp+'</li>'
+        pokemon.attack()
+        pokemon.attack()
+        tmoves.innerHTML +='<li> hp: '+pokemon.hp+'</li>'
+        pokemon.feed()
+        tmoves.innerHTML +='<li> hp: '+pokemon.hp+'</li>'
+        pokemon.attack()
+        pokemon.attack()
+        pokemon.attack()
+        pokemon.feed()
+        pokemon.attack()
+        tmoves.innerHTML +='<li>'+pokemon.attack()+'</li>'
+        tmoves.innerHTML +='<li> hp: '+pokemon.hp+'</li>'
+    </script>
+</body>
+</html>

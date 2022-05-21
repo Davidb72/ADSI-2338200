@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores</title>
+    <link rel="stylesheet" href="css/master.css">
+        <style>
+        ul {
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+            width: 310px;
+        }
+
+        ul li {
+            list-style: none;
+            display: inline-block;
+            background-color: #fff;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 2.2rem;
+        }
+
+        ul li:first-of-type {
+            background-color: #183994;
+        }
+
+        ul li:last-of-type {
+            background-color: #183994;
+        }
+
+        ul li:nth-of-type(3) {
+            background-color: #183994;
+        }
+
+        table {
+            border-collapse: none;
+            margin: 0 auto;
+        }
+
+        table td {
+            background-color: #ebf3ec;
+            border: 1px solid rgb(0, 0, 0);
+            padding: 20px;
+        }
+
+        table tr:nth-child(2n) td:nth-child(2n+1),
+        table tr:nth-child(2n+1) td:nth-child(2n) {
+            background-color: #141314;
+        }
+        nav,
+        article {
+            background-color: #183994;
+            border-radius: 4px;
+            display: inline-block;
+            font-display: inline-block;
+            vertical-align: top;
+            padding: 10px;
+        }
+        nav {
+            width: 24%;
+        }
+        article {
+            width: 66%;
+        }
+        nav a:link,
+        nav a:visited {
+            background-color: black;
+            border-radius: 4px;
+            color: #ced5d6;
+            display: block;
+            margin: 4px 0;
+            opacity: 0.9;
+            padding: 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            opacity: 1;
+        }
+        article div {
+            display: none;
+        }
+        article div#home:target,
+        article div#services:target,
+        article div#contact:target {
+            display: block;
+        }
+        article div img {
+            height: 100%;
+            width: 100%;
+        }
+        /*Al RESALTAR EL TEXTO CAMBIA DE COLOR*/
+        
+        p.yellow::selection {
+            background-color: #dd0;
+        }
+        p.blue::selection {
+            background-color: #00d;
+            color: #fff;
+        }
+        p.red::selection {
+            background-color: #d00;
+            color: #fff;
+        }
+    </style>
+<body>
+    <main>
+        <header>
+            <h1><a href="index.html">👨‍🦽💨</a>Selectores</h1>
+        </header>
+        <section>
+            <h2>first-of-type / last-of-type / nth-child(n)</h2>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            <h2>nth-child(n)</h2>
+            <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <h2>#home:target</h2>
+            <nav class="menu">
+                <a href="#home">HOME</a>
+                <a href="#services">SERVICES</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+            <article>
+                <div id="home">
+                    <h3>HOME</h3>
+                    <img src="https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/594a1ced5bafe85dfd3c9869/gato-romano_0.jpg">
+                </div>
+
+                <div id="services">
+                    <h3>SERVICES</h3>
+                    <img src="https://images.squarespace-cdn.com/content/v1/53daa37ce4b0f890bb843382/1597256474411-UA2UG8U2G2ITV4BPR1MT/gato-Elwood.jpg?format=1000w">
+                </div>
+
+                <div id="contact">
+                    <h3>CONTACT</h3>
+                    <img src="https://static.nationalgeographic.es/files/styles/image_3200/public/75552.ngsversion.1422285553360.jpg?w=1600&h=1067">
+                </div>
+            </article>
+            <h2>Selection Text</h2>
+            <p class="yellow">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolore odio odit aspernatur nulla nisi quam ducimus reiciendis amet delectus?
+            </p>
+            <p class="blue">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolore odio odit aspernatur nulla nisi quam ducimus reiciendis amet delectus?
+            </p>
+            <p class="red">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolore odio odit aspernatur nulla nisi quam ducimus reiciendis amet delectus?
+            </p>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge</title>
+    <link rel="shortcut icon" href="images/JavaScript.png">
+    <style>
+        * {
+            text-decoration: none;
+            }
+        *::-webkit-scrollbar {
+            width: 12px;
+            }
+        *::-webkit-scrollbar-track {
+            border-radius: 0px;
+            background-color: rgba(16, 16, 16, 0.827);
+            }
+        *::-webkit-scrollbar-thumb {
+            background-color: #398e7a;
+            background-image:-webkit-linear-gradient(45deg,#ffffff4d 20%,transparent 20%,transparent 40%,#ffffff4d 40%,#ffffff4d 60%,transparent 60%,transparent 80%,#ffffff4d 80%);
+            border-radius: 10px;
+        } 
+        body{
+            background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+            height: 953px;
+        }
+        
+        article.display{
+            background: url(images/War/fondo.svg) no-repeat;
+            width: 420px;
+            height: 600px;
+            position: relative;
+            margin: auto;
+            padding: 1px;
+            top: 100px;
+            right: 50px;
+            
+        }
+        button.male {
+            background: url(images/War/Hombre.svg) no-repeat;
+            cursor: pointer;
+            border: none;
+            width: 132px;
+            height: 122px;
+            position: relative;
+        }
+        button.female {
+            background: url(images/War/Mujer.svg) no-repeat;
+            cursor: pointer;
+            border: none;
+            width: 132px;
+            height: 122px;
+            position: relative;
+        }
+        button.continue {
+            background: url(images/War/Validate.svg) no-repeat;
+            border: none;
+            width: 132px;
+            height: 50px;
+            cursor: pointer;
+            margin-left: 140px;
+            margin-top: 45px;
+            transition: 0.2s ease-in;
+          
+        }
+        .boton {
+            transition: 0.2s ease-in;
+        }
+        .boton button:hover {
+            transform: scale(1.1)
+        }
+        .gener button{
+            transition: 0.2s ease-in;
+        }
+        .gener button:hover {
+            transform: scale(1.1)
+        }
+        .gener {
+            margin-top: 145px;
+            margin-left: 60px;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        input.name {
+            height:23px;
+            width: 300px;
+            margin-top: 42px;
+            margin-left: 56px;
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 760;
+            text-align: center;
+            border: 0;
+            font-size: 27px;
+            outline: none;
+            background-color: #6F8B73;  
+        }
+        input#date1 {
+            height:25px;
+            width: 303px;
+            margin-top: 66px;
+            margin-left: 56px;
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none;
+            border: 0;
+            font-size: 27px;
+            text-align: center;
+            font-weight: 790;
+            outline: none;
+            background-color: #6F8B73;
+            
+        }
+        section.validate1{
+            background: url(images/War/verificado.png) no-repeat;
+            width: 116px;
+            height: 115px;
+            right: 4px;
+            bottom: 2px;
+            position: relative;
+            
+        }
+        section.validate2{
+            background: url(images/War/verificado.png) no-repeat;
+            width: 116px;
+            height: 115px;
+            right: 4px;
+            bottom: 2px;
+            position: relative;
+            
+            
+        }
+        main.guerra section{
+            background: url(images/War/Guerra.svg) no-repeat;
+            width: 420px;
+            height: 600px;
+            position: relative;
+            margin: auto;
+            padding: 1px;
+            top: 100px;
+            right: 50px;
+        }
+        main.noguerra section{
+            background: url(images/War/Noguerra.svg) no-repeat;
+            width: 420px;
+            height: 600px;
+            position: relative;
+            margin: auto;
+            padding: 1px;
+            top: 100px;
+            right: 50px;
+        }
+        main.noguerraH section{
+            background: url(images/War/Noguerra.svg) no-repeat;
+            width: 420px;
+            height: 600px;
+            position: relative;
+            margin: auto;
+            padding: 1px;
+            top: 100px;
+            right: 50px;
+        }
+        .ocultar{
+            display: none;
+        }
+        /* main.noguerra,main.guerra{
+            display: none;
+        } */
+        button.backG{
+            background: url(images/War/continue.svg) no-repeat;
+            position: absolute;
+            width: 146px;
+            height: 53px;
+            border: none;
+            cursor: pointer;
+            top: 500px;
+            left: 132px;
+        }
+        button.backN{
+            background: url(images/War/continue.svg) no-repeat;
+            position: absolute;
+            width: 146px;
+            height: 53px;
+            border: none;
+            cursor: pointer;
+            top: 500px;
+            left: 132px;
+        }
+        button.backNH{
+            background: url(images/War/continue.svg) no-repeat;
+            position: absolute;
+            width: 146px;
+            height: 53px;
+            border: none;
+            cursor: pointer;
+            top: 500px;
+            left: 132px;
+        }
+    </style>
+</head>
+<body>
+    <main class="guerra ocultar">
+        <section>
+            <footer>
+                <button class="backG"></button>
+            </footer>
+        </section>
+    </main>
+    <main class="noguerra ocultar">
+        <section>
+            <footer>
+                <button class="backN"></button>
+            </footer>
+           
+        </section>
+    </main>
+    <main class="noguerraH ocultar">
+        <section>
+            <footer>
+                <button class="backNH"></button>
+            </footer>
+           
+        </section>
+    </main>
+    <main class="page1">
+        <article class="display">
+            <header class="gener">
+                <button class="male">
+                    <section class= "validate1 ocultar"></section>
+                </button>
+                <button class="female">
+                    <section class = "validate2 ocultar"></section>
+                </button>
+            </header>
+            <div class="texto1">
+                <input class="name" type="text">
+            </div>
+            <div class="texto2">
+                <input id="date1" type="date">
+            </div>
+            <div class="boton">
+                <button class="continue"></button>
+            </div>
+        </article>
+    </main>
+    <script>
+        //Const------------------------------------------------
+        
+        // constantes de fecha
+        var edadfinal=0
+        var nombreFinal=0
+        const date1= document.getElementById("date1");
+        const edad= document.getElementById("edad");
+        //nombre
+        const nombre = document.querySelector('input.name')
+        var nameF = ''
+        const h1 = document.getElementById('nameGO')
+        const h2 = document.getElementById('nameNo')
+        // Constantes
+        const mainGUERRAHN = document.querySelector('main.noguerraH')
+        const mainGUERRA = document.querySelector('main.guerra')
+        const mainNOGUERRA = document.querySelector('main.noguerra')
+        const male = document.querySelector('.male')
+        const validate1 = document.querySelector('section.validate1')
+        const female = document.querySelector('.female')
+        const validate2 = document.querySelector('section.validate2')
+        const continu = document.querySelector('button.continue')
+        const page1 = document.querySelector('main.page1')
+        const back = document.querySelector('button.backN')
+        const back1 = document.querySelector('button.backG')
+        const back2 = document.querySelector('button.backNH')
+
+        const calcularEdad = (date1) => {
+                const fechaActual = new Date();
+                const anoActual = parseInt(fechaActual.getFullYear());
+                const mesActual = parseInt(fechaActual.getMonth()) + 1;
+                const diaActual = parseInt(fechaActual.getDate());
+                // 
+                const anoNacimiento = parseInt(String(date1).substring(0, 4));
+                const mesNacimiento = parseInt(String(date1).substring(5, 7));
+                const diaNacimiento = parseInt(String(date1).substring(8, 10));
+                
+                let edad = anoActual - anoNacimiento;
+                if (mesActual < mesNacimiento) {
+                    edad--;
+                } else if (mesActual === mesNacimiento) {
+                    if (diaActual < diaNacimiento) {
+                        edad--;
+                    }
+                }
+                edadfinal=edad
+                return edad;
+                console.log(edad)
+            };
+            window.addEventListener('load', function () {
+
+                date1.addEventListener('change', function () {
+                    if (this.value) {
+                        edad.innerText = `Age: ${calcularEdad(this.value)} years`;
+                        // edadmenNo.innerText = `Age: ${calcularEdad(this.value)} years`;
+                        // edadwomanNo.innerText=`Age: ${calcularEdad(this.value)} years`;
+
+                    }
+                });
+
+            });
+        
+        male.onclick = () =>{
+            validate1.classList.remove('ocultar')
+            validate2.classList.add('ocultar')
+
+            continu.onclick = () =>{
+                mainGUERRA.classList.remove('ocultar')
+                page1.classList.add('ocultar')
+
+
+                if(edadfinal<18){
+                    
+                    mainGUERRA.classList.add('ocultar')
+                    mainGUERRAHN.classList.remove('ocultar')
+
+                    back2.onclick = () =>{
+                        mainGUERRAHN.classList.add('ocultar')
+                        page1.classList.remove('ocultar')
+                    }
+                }
+            }
+            back1.onclick = () =>{
+                mainGUERRA.classList.add('ocultar')
+                page1.classList.remove('ocultar')
+            }
+        }
+        female.onclick = () =>{
+            validate2.classList.remove('ocultar')
+            validate1.classList.add('ocultar')
+
+            continu.onclick = () =>{
+                mainNOGUERRA.classList.remove('ocultar')
+                page1.classList.add('ocultar')
+
+                back.onclick = () =>{
+                        mainNOGUERRA.classList.add('ocultar')
+                        page1.classList.remove('ocultar')
+                    }
+                
+                
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

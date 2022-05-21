@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        figure.img1 {
+            background: url(images/casa-kame-de-dragon-ball_1920x1080_xtrafondos.com.jpg) no-repeat center / contain;
+            height: 400px;
+            margin: 1rem auto;
+            overflow: hidden;
+            position: relative;
+            width: 740px;
+        }
+        figure.img1 div.img2 {
+            background: url(images/halcon-milenario-68534.gif) no-repeat center / contain;
+            height: 100px;
+            position: absolute;
+            left: -100px;
+            width: 350px;
+            animation: anim-img2 10s linear infinite;
+        }
+        @keyframes anim-img2 {
+            0% {
+                left: -100px;
+                top: 0px;
+                transform: rotateY(0deg);
+            }
+            50% {
+                left: 60%;
+                top: 120px;
+                transform: rotateY(0deg) scale(1.6);
+            }
+            51% {
+                left: 60%;
+                top: 50px;
+                
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="index.html">👨‍🦽💨</a>Animation</h1>
+        </header>
+        <section>
+            <h2>Example</h2>
+            <figure class="img1">
+                <div class="img2"></div>
+            </figure>
+        </section>
+    </main>
+</body>
+</html>

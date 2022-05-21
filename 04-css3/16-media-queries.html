@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        * {
+            transition: all 0.2s ease-in;
+        }
+        body {
+            background-color: #003675;
+            color: #ffffffce;
+            font-weight: 400;
+        }
+        main {
+            padding: 2rem;
+        }
+        main header figure.logo {
+            background: url(images/imgs/pepsi01.png) no-repeat center / contain;
+            margin: 0 auto;
+            width: 919px;
+            height: 354px;
+        }
+        main p {
+            line-height: 2rem;
+            text-align: justify;
+        }
+        main h1 {
+            font-size: 4rem;
+            text-align: center;
+        }
+        main h1 span.small,
+        main h1 span.medium {
+            display: none;
+        }
+        /*MEDIA QUERIES*/
+        @media (max-width: 1024px){
+            main header figure.logo {
+            background: url(images/imgs/pepsi02.png) no-repeat center / contain;
+            width: 348px;
+            height: 370px;
+        }
+        main h1 span.small,
+        main h1 span.large {
+            display: none;
+        }
+        main h1 span.medium{
+            display: inline;
+        }
+        main h1 span.medium,
+        main h1 span.large {
+            display: none;
+        }
+        main h1 span.small{
+            display: inline;
+        }
+        main h1{
+            font-size:2rem;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <figure class="logo"></figure>
+        </header>
+            <h1>Media Queries
+                <span class="large">( >1024px )</span>
+                <span class="medium">( < 1024px )</span>
+                <span class="small">( < 780px )</span>
+            </h1>
+        <section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae molestiae et ratione blanditiis perferendis praesentium obcaecati harum deserunt odio voluptatibus. Ipsa molestias fugiat odit eveniet et id repellendus ut animi commodi possimus voluptatem fugit eos, harum magni dolore reiciendis iusto? Fugiat laborum similique incidunt aut unde distinctio vitae quis omnis aliquid sint est, soluta quaerat consequatur ratione temporibus ipsum eum reiciendis iste tenetur facilis provident? Facere aut sunt iste velit veritatis beatae recusandae dolores deleniti quae, perspiciatis reiciendis repellendus obcaecati, libero ad impedit consequuntur. Libero et expedita in explicabo voluptatibus architecto veniam aliquam sit quis nemo at tempore, beatae ex quidem vel numquam ipsam error corrupti quo ullam incidunt. Temporibus, nostrum quis perferendis dolore ducimus deserunt ex sed ea quia inventore alias quaerat, quibusdam doloremque magnam neque quo. Deleniti porro deserunt consectetur enim ipsam rerum iste iusto architecto in quod inventore beatae eveniet, natus repellat maxime soluta delectus dolorum? Nam vero delectus labore necessitatibus. Sit tenetur expedita repellendus, quis reiciendis vero possimus blanditiis! Fugiat debitis aut similique unde, omnis animi excepturi quas reprehenderit iste dolorum velit totam exercitationem, porro, architecto optio dolor voluptatibus eos ducimus vitae. Nisi nihil reprehenderit impedit dignissimos hic nam blanditiis doloremque voluptate dolor odio velit at, est aliquid? Natus fugiat, magnam dignissimos amet ex ab, aliquid voluptatum omnis, incidunt nulla ipsum quidem quae explicabo. Autem nemo incidunt nam error consequatur nulla culpa ea omnis mollitia. Asperiores mollitia dolorum eius recusandae obcaecati veritatis ipsa officiis nam repudiandae sunt, adipisci distinctio nostrum minima ratione eum modi in facilis quibusdam enim consequatur? Rem, est fuga illo molestias sapiente ipsa repellat optio natus numquam consectetur temporibus mollitia perspiciatis aliquid laborum recusandae explicabo sed repudiandae, blanditiis ut, earum expedita accusamus tenetur! Animi ipsum recusandae aliquam adipisci, necessitatibus magnam nam rem enim dignissimos impedit, eum eligendi vel consectetur alias sapiente quos? Sequi minus a deleniti ducimus accusamus aliquam, dolore numquam est voluptatum ea reiciendis recusandae maiores. Tenetur vitae molestias maiores ab rerum illo sunt, repudiandae eos, voluptate quos facere eligendi magni nisi aut quibusdam itaque quasi exercitationem veniam iusto minima labore voluptates quisquam placeat. Enim similique molestias quae voluptas reiciendis totam, provident laborum excepturi assumenda neque ad. Explicabo, minus. Vero voluptas soluta nihil cumque ex. Pariatur fuga atque numquam. Vel, odit corrupti alias aut laboriosam aspernatur dolor quo aliquid est itaque incidunt ut ad sapiente temporibus hic quasi! Aliquid non excepturi sapiente dolore, vitae molestias, itaque dicta, tempore voluptatibus doloribus quibusdam animi delectus eveniet consectetur. Provident nisi velit voluptates quasi nobis delectus totam inventore veritatis, consequatur alias nesciunt libero incidunt quos, numquam odio, corporis sapiente ab accusamus labore sint laboriosam.</p>
+    </section>
+    </main>
+</body>
+</html>

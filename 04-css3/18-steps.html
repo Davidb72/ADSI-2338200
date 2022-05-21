@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steps</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        div.steps {
+            position: relative;
+            margin: 2rem auto;
+        }
+        div.steps01 {
+            background: url(images/imgs/28-run-legs-removebg-preview.png) no-repeat;
+            height: 150px;
+            width: 98px;
+            animation: animSteps01 0.8s steps(6) infinite;
+            margin: 2rem auto;
+        }
+        @keyframes animSteps01 {
+            100% { background-position: -600px; }
+        }
+        div.steps02 {
+            background: url(images/imgs/ece9d206e251559c180acbd384a649bd-removebg-preview.png) no-repeat;
+            width: calc(684px / 7);
+            height: 240px;
+            animation: animSteps02 1.5s steps(7) infinite;
+            margin: 2rem auto;
+        }
+        @keyframes animSteps02 {
+            100% { background-position: -684px; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="index.html">👨‍🦽💨</a>Steps</h1>
+        </header>
+        <section>
+            <h2>Example 01</h2>
+            <div class="steps01"></div>
+            <h2>Example 02</h2>
+            <div class="steps02"></div>
+        </section>
+    </main>
+</body>
+</html>

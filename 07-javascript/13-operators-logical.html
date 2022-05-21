@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opr Logical</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="shortcut icon" href="images/JavaScript.png">
+    <style>
+        table.operators {
+            border-collapse:collapse;
+            font-size: 1rem;
+            width: 90%;
+            margin: 20px auto;
+        }
+        table thead th {
+            background: rgba(255, 160, 160, 0.712);
+            color: black;
+        }
+        table th, table td {
+            background: rgba(207, 203, 203, 0.719);
+            border: 1px solid black;
+            color: rgb(0, 0, 0);            
+            padding: 10px;
+        }
+        table thead input{
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            font-family:sans-serif;
+            padding: 8px;
+            width: 120px;
+        }
+        table tbody td:first-child {
+            font-size: 1rem;
+        }
+        table tbody tr:nth-child(even) td{
+            background: rgb(224, 226, 198);
+
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+            </a>
+            <h1>Opr Logical</h1>
+        </header>
+        <section>
+            <tr>
+                <table class="operators">
+                    <thead>
+                        <th colspan="5">
+                            <input type="number" placeholder="X Value">
+                            <input type="number" placeholder="Y Value">
+
+                        </th>
+                        <tr><th>Operator</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                            <th>Result </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&&</td>
+                            <td>And </td>
+                            <td>(x < 10 && y > 1)</10>) </td>
+                            <td class="rs"></td>
+                        </tr>
+                        <tr>
+                            <td>||</td>
+                            <td>Or</td>
+                            <td>(x == 5 || y == 5) </td>
+                            <td class="rs"></td>
+                        </tr>
+                        <tr>
+                            <td>!</td>
+                            <td>Not</td>
+                            <td>!(x == y) </td>
+                            <td class="rs"></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </tr>
+            <tr>
+                
+            </tr>
+        </section>
+    </main>
+    <script>
+        //var-const
+        const rss=document.querySelectorAll('td.rs')
+        
+        const input=document.querySelector('input')
+        //event
+        input[0].oninput=()=> {
+            if (input[0].value != '' && input[1].value != ''){
+
+                if (input[0].value.length < 4) {
+                    //&&
+                    rss[0].innerText=(parseInt(input[0].value) < 10 && parseInt(input[1].value) > 1)
+                    // ||
+                    rss[1].innerText=(parseInt(input[0].value) == 5 || parseInt(input[1].value) == 1)
+                    // !=
+                    rss[2].innerText= !(parseInt(input[0].value) == (input[1].value))
+
+
+                
+                }else{
+                    input[0].value = input.slice(0. -1)
+                }
+            }
+            else {
+                for (let i = 0; i < rss; i++) {
+                    resultX[i]='';
+                    resultY[i]='';
+                }
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

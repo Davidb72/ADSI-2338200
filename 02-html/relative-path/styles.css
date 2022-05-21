@@ -1,0 +1,19 @@
+html {
+color: #333;
+font-size: 18px;
+font-family: Arial;
+      }
+div.main {
+border: 4px solid #aaa;
+padding: 20px;
+margin: 50px auto;
+text-align: center;
+width: 400px;
+          }
+div.menu-header a:link,
+div.menu-header a:visited {
+color: #333;
+                }
+div.content p {
+text-align: justify;
+            }

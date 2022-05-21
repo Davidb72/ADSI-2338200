@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Selectors</title>
+    <link rel="stylesheet" href="css/main.css"> 
+    <style>
+    * {
+        border: 1px solid rgb(253, 237, 7);
+        padding: 10px;
+    }
+    ul {
+        list-style: none;
+    }
+    li {
+        font-size: 1.4rem;
+    }
+    main section ul li {
+        background-color: rgb(145, 218, 173);
+    }
+    .upper {
+        text-transform: Sea of Thieves;
+    }
+    #important {
+        color: rgb(7, 7, 250);
+    }
+    main section ul.games li#important {
+        background-color: rgb(77, 77, 153);
+    }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="./">⬅️</a>Basic Selectors</h1>
+        </header>
+        <section>
+            <ul class="games">
+                <li class="upper">League of Legends</li>
+                <li id="important">Sea of Thieves</li>
+                <li>Cyberpunk 2077</li>
+                <li>God of War</li>
+                <li>Spider-Man</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

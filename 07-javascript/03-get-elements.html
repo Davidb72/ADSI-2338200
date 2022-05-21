@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Elements(s)</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="shortcut icon" href="images/JavaScript.png">
+    <style>
+        ul li {
+            margin-left: 50px;
+            color: #e7e4df;
+        }
+        p {
+            color: #e7e4df;
+            padding-left: 60px;
+        }
+        button {
+            margin-top: 40px;
+            border: none;
+            padding: 10px;
+        }
+        .button {
+            transition-duration: 0.4s;
+        }
+        button:hover {
+            background-color: #1fddd4; /* Green */
+            color: white;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+            </a>
+            <h1>Get Elements(s)</h1>
+        </header>
+        <section>
+            <h3 id="year"></h3>
+            <ul>
+                <li>Yujiro Hanma</li>
+                <li>Baki Hanma</li>
+                <li>Biscuit Oliva</li>
+            </ul>
+            <h3 id="nli"></h3>
+            <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <h3 id="np"></h3>
+
+            <!-- -->
+            <button class="btn firts">Button 1</button>
+            <button class="btn">Button 2</button>
+            <button class="btn">Button 3</button>
+        </section>
+    </main>
+    <script>
+        let year = document.getElementById('year')
+        let nli = document.getElementById('nli')
+        let np = document.getElementById('np')
+        let ndate = new Date
+        year.innerText = 'Current Year \n' + ndate.getFullYear()
+
+        //getElementByTagName
+        let lis = document.getElementsByTagName('li')
+        nli.innerText = 'There are: ' + lis.length + ' list elements \n' + 'Last element value is: ' + lis[lis.length-1].textContent
+
+        //getElementsByClassName
+         let nps = document.getElementsByClassName('paragraph')
+         nps[nps.length-1].style.color ='green'
+         np.innerText = 'There are: ' + nps.length + ' < class="guayacan"p> with class paragraph </class=p>'
+
+         //querySelector(s)
+         let btn = document.querySelector('button.firts')
+         let btns = document.querySelectorAll('button.btn')
+
+         btn.style.marginLeft='120px'
+         btn.style.marginTop='30px'
+         btns[1].style.backgroundColor='Yellow'
+    </script>
+</body>
+</html>
