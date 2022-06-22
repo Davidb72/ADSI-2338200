@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write JS</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="shortcut icon" href="images/JavaScript.png">
+    <style>
+        main {
+         transition: background 2s ease;
+        }
+        section {
+            overflow-y: auto;
+            height: 560px;
+        }
+        div.block {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            align-items: center;
+            margin: 10px 10px 1.4rem 10px;
+        }
+        output {
+            color: aquamarine;
+            font-size: 1.5rem;
+        }
+        button {
+            border: 2px solid aquamarine;
+            border-radius: 6px;
+            background: rgba(139, 139, 139, 0.623);
+            cursor: pointer;
+        }
+        input, select, img {
+            margin: 10px auto;
+            align-items: center;
+            display: grid;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        img {
+            background-color: rgba(255, 255, 255, 0.603);
+            height: 200px;
+           cursor: pointer;
+        }
+    </style>
+</head>
+<body onload="welcome()">
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+            </a>
+            <h1>Events</h1>
+        </header>
+        <section>
+            <h2>Double Click</h2>
+            <div class="block">
+                <output class="msj-load">Page No load</output>
+            </div>
+
+            <div class="block">
+                <button class="btn-dblclick">Double Click Me</button>
+                <output class="nums-dbclick">0 Clicks</output>
+            </div>
+            <h2>Relase key</h2>
+            <div class="block">
+                <input type="text" class="inp-keyup">
+                <output class="msj-keyup"></output>
+            </div>
+            <h2>Resize Window</h2>
+            <div class="block">
+             <output class="msj-resize">No Resize</output>
+            </div>
+            <h2>Change Value</h2>
+            <div class="block">
+                <select class="slt-change">
+                    <option value="" selected disabled>Select Color</option>
+                    <option value="#11111199">Normal</option>
+                    <option value="#ff000073">red</option>
+                    <option value="#0000ff63">blue</option>
+                    <option value="yellow">yellow</option>
+                </select>
+            </div>
+            <h2>Mo</h2>
+            <div class="block">
+                <img src="" class="img-kakao">
+            </div>
+        </section>
+    </main>
+    <script>
+        // Elements
+        const msj_load = document.querySelector('.msj-load')
+        const btn_dbclick = document.querySelector('.btn-dblclick')
+        const nums_dbclicks = document.querySelector('.nums-dbclick')
+        const inp_keyup = document.querySelector('.inp-keyup')
+        const msj_keyup = document.querySelector('.msj-keyup')
+        const msj_resize = document.querySelector('.msj-resize')
+        const main_bg = document.querySelector("main")
+        const slt_change = document.querySelector(".slt-change")
+        const img_kakao = document.querySelector('.img-kakao')
+        //Variable
+        contdbclicks = 0
+        //Events
+        btn_dbclick.ondblclick = function(){
+            contdbclicks++
+            nums_dbclicks.textContent = contdbclicks + ' clicks'
+        }
+
+        inp_keyup.onkeyup = function() {
+            if (msj_keyup.value.length < 8)
+            msj_keyup.value = this.value
+        }
+
+        
+        window.onresize = function() {
+            msj_resize.textContent = 'Dimensions Responsive ' + window.outerWidth + " x " + window.outerHeight
+        }
+
+        slt_change.onchange = function(){
+            main_bg.style.backgroundColor = this.value
+        }
+
+
+        //MOuse 
+        img_kakao.onmouseover = function() {
+            this.src = './images/mc.jpg'
+        }
+        img_kakao.onmouseout = function() {
+            this.src = './images/po.jpg'
+        }
+
+
+        // Functions
+        // function welcome() {
+        //     msj_load.textContent('The page was load!')
+        // }
+    </script>
+</body>
+</html>

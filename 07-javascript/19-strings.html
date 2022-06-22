@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write JS</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="shortcut icon" href="images/JavaScript.png">
+    <style>
+       section{
+        background-color: rgba(255, 255, 255, 0.384);
+        width: 80%;
+        margin: 0px auto;
+        align-items: center;
+        display: grid;
+    }
+    textarea{
+        border-radius: 10px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+        display: flex;
+        margin: 15px auto;
+        height: 80px;
+        width: 60%;
+    }
+    div.options {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    input.area {
+        display: flex;
+        width: 30%;
+        margin: 12px auto;
+        align-items: center;
+        display: grid;
+    }
+    button.submit{
+        width: 40%;
+        margin: 12px auto;
+        align-items: center;
+        display: grid;
+        background-color: rgba(250, 178, 23, 0.829);
+        border-radius: 10px;
+        cursor: pointer ;
+    }
+    button.submit:hover{
+        transform: scale(1.1);
+    }
+    label {
+        margin: 0px 85px;
+    }
+   
+    input.lower:hover, input.uper:hover{
+        transform: scale(1.2);
+
+    }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+            </a>
+            <h1>Strings</h1>
+        </header>
+        <section>
+            <textarea class="textarea" cols="30" rows="10"></textarea>
+            <div class="options">
+                <label>
+                    <input type="radio" name="transform" value="1" class="lower">Lowercase
+                </label>
+                <label>
+                    <input type="radio" name="transform" value="2" class="uper">UPPERCASE
+                </label>
+                <input type="text" class = "area word-origin" placeholder="Word Origin">
+                <span> For </span>
+                <input type="text" class = "area word-replace" placeholder="Word Replace">
+                <input type="text" class = "area pos-start" placeholder="Pos Start">
+                <span> To </span>
+                <input type="text" class = "area pos-final" placeholder="Pos Final">
+            </div>
+            <button class="submit">Show string</button>
+        </section>
+    </main>
+    <script>
+        
+    </script>
+</body>
+</html>
