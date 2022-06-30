@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="shortcut icon" href="images/JavaScript.png">
+    <style>
+        :root {
+            color: brown;
+        }
+        .btn_dice, .meal {
+            border: 4px solid rgba(8, 180, 157, 0.959);
+            background-color: rgba(255, 255, 255, 0.678);
+            border-radius: 5px;
+            cursor: pointer;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 20px auto;
+            width: 120px;
+            animation: rotation 8s infinite linear;
+        }
+        @keyframes rotation {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(359deg);
+              }
+            }
+            section {
+                overflow-y: auto;
+                height: 560px;
+            }
+            
+            .reload{
+                border: 4px solid rgba(0, 0, 0, 0.719);
+                height: 40px;
+                width: 100px;
+                display: block;
+                align-items: center;
+                justify-content: center;
+                margin: 12px auto;
+                align-items: center;
+                display: grid;
+                cursor: pointer;
+                border-radius: 10px;
+                font-weight: 1000;
+                background-color: rgba(150, 149, 149, 0.87);
+            }
+            .reload:hover{
+                background-color: rgba(8, 180, 157, 0.959);
+            }
+            button.change{
+                font-size: 4rem;
+                border: 4px solid black;
+                height: 100px;
+                width: 100px;
+                display: block;
+                align-items: center;
+                justify-content: center;
+                margin: 12px auto;
+                align-items: center;
+                display: grid;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+            p{
+                text-align: center;
+                margin: 12px auto;
+                align-items: center;
+                display: grid;
+                font-weight: 100;
+                background-color: rgba(255, 255, 255, 0.562);
+                height: 20px;
+                width: 300px;
+            }
+            h2 {
+                color: var();
+            }
+
+    </style>
+    
+    
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+            </a>
+            <h1>Mathematics</h1>
+        </header>
+        <section>
+            <h2>Math.random (Roll A dice)</h2>
+            <button class="btn_dice">🍖</button>
+            <h2>Math.random (Colors)</h2>
+            <button class="meal">🥔</button>
+            <h2>Math.min | Math.max</h2>
+            <p class="out_min"></p>
+            <p class="out_max"></p>
+
+            <h2>Math (round|ceil|floor)</h2>
+            <br><br><br>
+            <button class="reload">Reload</button>
+        </section>
+    </main>
+    <script>
+    //elements
+    const btn_dice = document.querySelector('.btn_dice')
+    const meal = ['🍔', '🍟', '🌭', '🍿', '🍤', '🥓', '🥯', '🥨', '🥐', '🥞', '🍳', '🌮']
+    
+    const btn_meal = document.querySelector('.meal')
+    const change = document.querySelector('.meal')
+
+    const out_min = document.querySelector('.out_min')
+    const out_max = document.querySelector('.out_max')
+
+    const reload = document.querySelector('.reload')
+
+    //events
+    btn_dice.addEventListener('click', function() {
+        let vdice = Math.ceil(Math.random() * 6)
+        
+        this.textContent = vdice
+    })
+
+    btn_meal.addEventListener('click', function() {
+        let vmeal = Math.floor(Math.random() * (meal.length - 1))
+        change.classList.remove('meal')
+        change.classList.add('change')
+
+        this.textContent = meal[vmeal]
+        
+    })
+
+    reload.addEventListener('click', function() {
+        location.reload()
+    })
+    //load
+    out_min.textContent = 'Min value (5, 16, -2, 8, 17, -7) = '+ Math.min(5, 16, -2, 8, 17, -7) 
+    out_max.textContent = 'Min value (5, 16, -2, 8, 17, -7) = '+ Math.max(5, 16, -2, 8, 17, -7) 
+
+    </script>
+</body>
+</html>
