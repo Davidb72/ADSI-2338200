@@ -7,22 +7,157 @@
     <title>Chanllenge</title>
     <link rel="shortcut icon" href="images/JavaScript.png">
     <style>
-        body {
-            background: url(./images/casino/fondo.png) ;
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Splash&display=swap');
+
+
+        body::-webkit-scrollbar {
+                width: 8px;     /* Tamaño del scroll en vertical */
+                height: 8px;    /* Tamaño del scroll en horizontal */
+                display: none;  /* Ocultar scroll */
         }
+        .uno {
+            color: #26133f;
+        }
+        .dos {
+            color: #FFCC32;
+        }
+
+        body {
+            background: linear-gradient(45deg, #FFCC32, #6a00ff);
+            font-weight: 400;
+            margin: 0px;
+            min-height: 100vh;  
+        }
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            color: rgb(255, 248, 236);
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-align: center;
+            border-bottom: 7px dashed #000000a9;
+        }
+        .container {
+            box-shadow: 0 0 39px #ff0000;
+            margin-left: 8px;
+            background: url('./images/casino/fondo.jpg');
+            width: 99%;
+            height: 500px;
+            border-radius: 50px;
+            
+        }
+
+        /*-------Botones------*/
+        .btn__play {
+            background: url('./images/casino/Play.svg')center no-repeat;
+            cursor: pointer;
+            width: 192px;
+            height: 60px;
+            border: none;
+            outline: none;
+        }
+        .btn__reset {
+            background: url('./images/casino/Reset.svg')center no-repeat;
+            cursor: pointer;
+            width: 192px;
+            height: 60px;
+            border: none;
+            outline: none;
+        }
+        button {
+            transition: transform 0.1 ease-in;
+            margin: 20px;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        /*---------BALL-----------*/
+        .container__ball {
+            display: flex;
+            flex-flow: row;
+                  
+            justify-content: center;
+        }
+        .balla {
+            background: url('./images/casino/ball.svg') no-repeat center;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 45px;
+            margin: 0 auto;
+            
+            
+        }
+        .ballt {
+            width: 115px;
+            height: 119px;
+        }
+        .superBall {
+            background: url('./images/casino/Super__ball.svg') no-repeat center;
+            margin: 0 auto;
+            width: 115px;
+            height: 119px;
+        }
+
+      
     </style>
 </head>
 <body>
     <main>
         <header>
-            <h1>Chanllenge</h1>
+            <h1><span class="uno">Chanllenge</span>  <span class="dos">Baloto</span></h1>
         </header>
         <section>
-            
+            <div class="container">
+                <div class="container__ball">
+                    <div class="balla  ballt"></div>
+                    <div class="balla  ballt"></div>
+                    <div class="balla  ballt"></div>
+                    <div class="balla  ballt"></div>
+                    <div class="balla  ballt"></div>
+                    <div class="balla  superBall"</div>
+                </div>
+                <div class="incio">
+                    <button class="btn__play" id="play"></button>
+                    <button class="btn__reset" id="reset"></button>
+                </div>
+            </div>
         </section>
     </main>
     <script>
+        const bplay = document.getElementById('play');
+        const breset = document.getElementById('reset');
+        const balls = document.querySelectorAll('.balla');
+        const ballSuper = document.getElementById('balls');
+        var arrayBalotas= new Array
+        var arraySuperBalota= new Array
+
+        bplay.addEventListener('click', function(){
+            for (let i = 0; i < balls.length; i++) {
+                if (i<5) {
+                    let randNum = Math.ceil(Math.random()*(arrayBalotas.length-1));
+                    balls[i].textContent = arrayBalotas[randNum]
+                    arrayBalotas.splice[randNum,1]
+                }
+                else {
+                    let ranNumSb = Math.ceil(Math.random()*(arraySuperBalota.length))  
+                    balls[i].textContent = ranNumSb  
+                }
+                
+            }
+        })
+        //execution
+        for (let i = 0; i < 43; i++) {
+			arrayBalotas[i] = i+1;
+        }
+        for (let i = 0; i < 16; i++) {
+            arraySuperBalota[i] = i+1;
+        }
+
+        //Functions
         
+        // Reset Pagina
+        breset.onclick = function(){
+            window.location.replace('22-Challenge_baloto.html');
+        }  
     </script>
 </body>
-</html>
+</html> 
