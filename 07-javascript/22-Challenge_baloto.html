@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chanllenge</title>
     <link rel="shortcut icon" href="images/JavaScript.png">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Splash&display=swap');
 
@@ -37,18 +41,34 @@
             border-bottom: 7px dashed #000000a9;
         }
         .container {
+            overflow: hidden;
             box-shadow: 0 0 39px #ff0000;
-            margin-left: 8px;
+            margin: 0 auto;
             background: url('./images/casino/fondo.jpg');
-            width: 99%;
+            width: 50%;
             height: 500px;
             border-radius: 50px;
             
         }
 
+        .animation {
+            animation: bounceInDown 2s;
+        }
+
+        .animation__dos {
+            animation: bounceInRight 2s;
+        }
+
+        .animation__btn {
+            animation: flipInX 2s;
+        }
+
         /*-------Botones------*/
-        .btn__play {
-            background: url('./images/casino/Play.svg')center no-repeat;
+        .inicio {
+            display: flex;
+            justify-content: center;
+        }
+        /* .btn__play {
             cursor: pointer;
             width: 192px;
             height: 60px;
@@ -56,7 +76,6 @@
             outline: none;
         }
         .btn__reset {
-            background: url('./images/casino/Reset.svg')center no-repeat;
             cursor: pointer;
             width: 192px;
             height: 60px;
@@ -69,33 +88,81 @@
         }
         button:hover {
             transform: scale(1.1);
-        }
+        } */
         /*---------BALL-----------*/
         .container__ball {
+            
             display: flex;
             flex-flow: row;
-                  
+            line-height: 2.5rem;
+            align-items: center;   
             justify-content: center;
+            flex-wrap: wrap;
         }
         .balla {
+            padding-top: 40px;
             background: url('./images/casino/ball.svg') no-repeat center;
+            background-size: contain;
+            font-size: 35px;
             text-align: center;
-            margin-top: 20px;
-            font-size: 45px;
             margin: 0 auto;
-            
-            
+            font-weight: 700;            
         }
         .ballt {
-            width: 115px;
-            height: 119px;
+            width: 80px;
+            height: 80px;
+            color: #6a00ffaf;
         }
         .superBall {
             background: url('./images/casino/Super__ball.svg') no-repeat center;
             margin: 0 auto;
-            width: 115px;
-            height: 119px;
+            background-size: contain;
+            width: 80px;
+            height: 80px;
+            color: rgba(245, 245, 245, 0.87);
         }
+
+        /*---BOTONES DE PLAY Y RESET---*/
+        .btn{
+            cursor: pointer;
+            border: none;
+            background-color: rgba(53, 53, 53, 0.678);
+             text-decoration: none;
+             padding: 10px 50px;
+             font-size: 1rem;
+             position: relative;
+             margin: 32px;
+             font-weight: 800;
+}
+        .btn__uno {
+            color: rgb(255, 255, 255);
+            border-radius: 20px;    
+            box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;              
+            overflow: hidden;
+        }
+
+        .btn__uno::after{
+            content: "";
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: -50px;
+            left: -100px;
+            background: #13ff13;
+            background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+            z-index: -1;
+            transition: transform 0.5s ease;
+        }
+
+.btn:hover{
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgba(16, 226, 253, 0.5), -10px 10px 25px 0 rgba(183, 0, 255, 0.794);
+}
+
+.btn:hover::after{
+    transform: rotate(150deg);
+}
 
       
     </style>
@@ -108,16 +175,16 @@
         <section>
             <div class="container">
                 <div class="container__ball">
-                    <div class="balla  ballt"></div>
-                    <div class="balla  ballt"></div>
-                    <div class="balla  ballt"></div>
-                    <div class="balla  ballt"></div>
-                    <div class="balla  ballt"></div>
-                    <div class="balla  superBall"</div>
+                    <div class="animation balla  ballt"></div>
+                    <div class="animation balla  ballt"></div>
+                    <div class="animation balla  ballt"></div>
+                    <div class="animation balla  ballt"></div>
+                    <div class="animation balla  ballt"></div>
+                    <div class="animation__dos balla  superBall"></div>
                 </div>
-                <div class="incio">
-                    <button class="btn__play" id="play"></button>
-                    <button class="btn__reset" id="reset"></button>
+                <div class="inicio">
+                    <button class="animation__btn btn__uno btn ñoño btn__play" id="play">Play</button>
+                    <button class="animation__btn btn__uno btn ñoño btn__reset" id="reset">Reset</button>
                 </div>
             </div>
         </section>
@@ -144,7 +211,6 @@
                 
             }
         })
-        //execution
         for (let i = 0; i < 43; i++) {
 			arrayBalotas[i] = i+1;
         }
@@ -157,7 +223,9 @@
         // Reset Pagina
         breset.onclick = function(){
             window.location.replace('22-Challenge_baloto.html');
-        }  
+        } 
+        
+        
     </script>
 </body>
 </html> 
