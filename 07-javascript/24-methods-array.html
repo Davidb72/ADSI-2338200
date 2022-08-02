@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods Array</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="shortcut icon" href="images/JavaScript.png">
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+            </a>
+            <h1>Methods Array</h1>
+        </header>
+        <section>
+            <ul class="emojis"></ul>
+        </section>
+    </main>
+    <script>
+       //Elements
+       const emojis = document.querySelector('.emojis')
+        // Variabes & Constnaats
+        const list = ['🐸', '🦆', '🐷', '🐳', '🦜']
+
+        //ValeOff
+        emojis.innerHTML = `<li> <b>valueOf:</b> ${list.valueOf()} </li>`
+        //String
+        emojis.innerHTML += `<li> <b>String:</b> ${list.toString()} </li>`
+        //join
+        emojis.innerHTML += `<li> <b>Join:</b> ${list.join('☠️')} </li>`
+        //sort
+        emojis.innerHTML += `<li> <b>Sort:</b> ${list.sort()} </li>`
+        //reverse
+        emojis.innerHTML += `<li> <b>Reverse:</b> ${list.reverse()} </li>`
+        //Pop (Delete lastone)
+        list.pop()
+        emojis.innerHTML += `<li> <b>Pop:</b> ${list} </li>`
+        //shift (Delete firstone)
+        list.shift()
+        emojis.innerHTML += `<li> <b>shift:</b> ${list} </li>`
+         //push (Add in the end)
+         list.push('🧨')
+        emojis.innerHTML += `<li> <b>Push:</b> ${list} </li>`
+        //unshift (Add in the first position)
+        list.unshift('🥡')
+        emojis.innerHTML += `<li> <b>Unshift:</b> ${list} </li>`
+        //slice (Delete position)
+        let animals = list.slice(2,3)
+        emojis.innerHTML += `<li> <b>Slice:</b> ${animals} </li>`
+    </script>
+</body>
+</html>

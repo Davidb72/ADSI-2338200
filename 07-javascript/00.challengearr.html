@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <link rel="shortcut icon" href="images/JavaScript.png">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+    <style>
+        *::-webkit-scrollbar {
+    width: 12px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #a4b71a;
+    background-image:-webkit-linear-gradient(45deg,#ffffff4d 20%,transparent 20%,transparent 40%,#ffffff4d 40%,#ffffff4d 60%,transparent 60%,transparent 80%,#ffffff4d 80%);
+    border-radius: 10px;
+  }
+body {
+    background: url(https://miro.medium.com/max/2400/1*uZ094Kxwv_qLih3tn9AZ6Q.jpeg) no-repeat center;
+    background-size: cover;
+    color: #ffffff99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    min-height: 92vh;
+}
+main {
+    background-color: #11111199;
+    border-radius: 50px;
+    border: 2px solid #aa0;
+    background: url(images/Arrays/Fondo.png) no-repeat;
+    width: 460px;
+    height: 784px;
+}
+header {
+    position: relative;
+}
+header h1 {
+    color: #aa0;
+    text-align: center;
+    font-size: 2.2rem;
+}
+h2,h3,h4 {
+    text-align: center;
+    border-bottom: 2px dotted #ffffff99;
+    padding-bottom: 10px;
+    margin: 0px 40px;
+    
+}
+header a:link,
+header a:visited {
+    color: #aa0;
+    display: block;
+    position: absolute;
+    height: 40px;
+    left: 13px;
+    top: -5px;
+    transition: all 0.2s ease-in;
+    width: 40px;
+}
+header a:hover {
+    transform: translateX(-5px);
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 560px;
+    gap: 1rem;
+    align-items: center;
+}
+nav li {
+    list-style: none;
+}
+nav li a:link,
+nav li a:visited {
+    background-color: #aaaa00aa;
+    border-radius: 20px;
+    display: flex;
+    color: #111;
+    padding: 10px;
+    text-decoration: none;
+    width: 260px;
+    transition: background 0.2s ease-in;
+}
+nav li a i {
+    background-color: #111;
+    border-radius: 20px;
+    color: #aa0;
+    display: flex;
+    justify-content: center;
+    font-style: normal;
+    align-items: center;
+    height: 24px;
+    margin-right: 10px;
+    width: 24px;
+    transition: transform 0.2s 0.2s ease-in;
+}
+nav li a:hover {
+    background-color: #aaaa00ff;
+}
+nav li a:hover i {
+    transform: scale(1.4);
+}
+/*----- Food -----*/
+.food {
+    grid-template-columns: repeat(3, 40px);
+    gap: 80px;
+    display: grid;
+    left: 64px;
+    position: relative;
+    top: 154px;
+    gap: 4.7rem; 
+    width: 350px;
+    overflow: hidden;
+}
+.caj {
+    width: 100px;
+    height: 100px;
+}
+
+.figure1{
+    background: url(images/Arrays/ham.svg) no-repeat center;
+    cursor: pointer;
+    filter: grayscale(0.5);
+}
+.figure1:hover {
+    transform: scale(1.1);
+    filter: grayscale(0.0);
+}
+
+.figure2{
+    background: url(images/Arrays/papas.svg) no-repeat center;
+    cursor: pointer;
+    filter: grayscale(0.5);
+}
+
+.figure2:hover {
+    transform: scale(1.1);
+    filter: grayscale(0.0);
+}
+
+.figure3{
+    background: url(images/Arrays/donas.svg) no-repeat center;
+    cursor: pointer;
+    filter: grayscale(0.5);
+}
+
+.figure3:hover {
+    transform: scale(1.1);
+    filter: grayscale(0.0);
+}
+
+.figure4{
+    background: url(images/Arrays/sand.svg) no-repeat center;
+    cursor: pointer;
+    filter: grayscale(0.5);
+}
+
+.figure4:hover {
+    transform: scale(1.1);
+    filter: grayscale(0.0);
+}
+.figure5{
+    background: url(images/Arrays/hotdog.svg) no-repeat center;
+    cursor: pointer;
+    filter: grayscale(0.5);
+}
+
+.figure5:hover {
+    transform: scale(1.1);
+    filter: grayscale(0.0);
+}
+
+.figure6{
+    background: url(images/Arrays/pizza.svg) no-repeat center;
+    cursor: pointer;
+    filter: grayscale(0.5);
+}
+
+.figure6:hover {
+    transform: scale(1.1);
+    filter: grayscale(0.0);
+}
+
+.animation {
+    animation: fadeInDown; 
+    animation-duration: 1s; 
+}
+ .on {
+    filter: grayscale(0.0);
+}
+
+/*------Botones----*/
+
+.btn__uno {
+    background: url(images/Arrays/add.svg) no-repeat center;
+}
+
+.btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    
+}
+.abajo {
+    position: relative;
+    top: 200px;
+    left: 30px;
+}
+
+/*------INPUTS--------*/
+.select{
+            position: relative;
+            left: 50px;
+            top: 15px;
+            border-radius:50px ;
+            width: 200px;
+            text-align: center;
+            background-color: #00000090;
+        }
+          .cartStyle{
+            height: 80px;
+            width: 75px;
+        }
+        section nav.abajo{
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            height: 44px;
+        }
+        section nav.abajo input[type=checkbox],section nav.abajo input[type=number]{
+            -webkit-appearance: none;
+            transition: all .4s ease;
+            cursor: pointer;
+            height: 30px;
+            width: 73px;
+            border: none;
+            background-color: white;
+            outline: none;
+        }
+        .result{
+            display: flex;
+            flex-direction: row;
+            border: 2px soldid blue;
+            width: 1000px;
+        }
+        section nav.abajo input[type=checkbox].position{
+            background: url(images/Arrays/FIRST.svg)no-repeat center;
+            width: 100px;
+        }
+        section nav.abajo input[type=checkbox].position:checked{
+            background: url(images/Arrays/LAST.svg)no-repeat center;
+            width: 100px;
+        }
+        section nav.abajo input[type=checkbox].action{
+            background: url(images/Arrays/add.svg)no-repeat center;
+            width: 100px;
+        }
+        section nav.abajo input[type=checkbox].action:checked{
+            background: url(images/Arrays/remove.svg)no-repeat center;
+            width: 100px;
+        }
+        section nav.abajo input[type=number].nposition{
+            background: rgba(255, 255, 255, 0.785);
+            border-radius: 50px;
+            text-align: center;
+        }
+
+        .btn_agregar{
+            background: url(images/Arrays/Mas.svg) no-repeat;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            border: none;
+            display: flex;
+            cursor: pointer;
+            position: relative;
+            top: 210px;
+            
+        }
+    
+        .btn_remove{
+            background: url(images/Arrays/Menos.svg) no-repeat;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            border:none;
+       
+            
+            display: flex;
+            cursor: pointer;
+            position: relative;
+            top: 210px;
+            
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+            </a>
+            <h1></h1>
+        </header>
+        <section>
+            <div class="container">
+                <div class="food">
+                    <div class="caj figure1 animation"></div>
+                    <div class="caj figure2 animation"></div>
+                    <div class="caj figure3 animation"></div>
+                    <div class="caj figure4 animation"></div>
+                    <div class="caj figure5 animation"></div>
+                    <div class="caj figure6 animation"></div>
+                </div>
+                <nav class="abajo">
+                    <input class="position" type="checkbox">
+                    <input class="action" type="checkbox">
+                    <input class="nposition" type="number" min="0" max="99">
+                </nav>
+                <button class="btn_agregar"></button>
+                
+            </section>
+            <footer class="footer">
+                <section class="result"></section>
+            </div>
+        </section>
+    </main>
+    <script>
+     var carts
+        const agregar = document.querySelector('.action')
+        const cartas = document.querySelectorAll('.carta')
+        const btn_agregar = document.querySelector('.btn_agregar')
+        const footer = document.querySelector('.footer')
+        const result= document.querySelector('.result')
+        const position = document.querySelector('.position')
+        // Globlal Variables
+
+        cartas.forEach(element =>{
+            element.addEventListener('click',(e)=>{
+                removeAnimation()
+                element.classList.add('active')
+                 carts= (element.classList[1])
+
+            })
+        })
+        function removeAnimation (){
+            cartas.forEach(element=>{
+                element.classList.remove('active')
+            })
+        }
+        agregar.addEventListener('click',(e)=>{
+            
+            if(agregar.checked == true){
+                btn_agregar.classList.remove('btn_agregar')
+                btn_agregar.classList.add('btn_remove')
+                
+                
+               
+
+            }else{
+                btn_agregar.classList.remove('btn_remove')
+                btn_agregar.classList.add('btn_agregar')
+            }
+        })
+        btn_agregar.onclick = () =>{
+            
+            
+            
+            if(agregar.checked != true){
+                if(position.checked!= true){
+                    result.insertAdjacentHTML ('afterbegin', `<div class="${carts} cartStyle"></div>`)
+                }else{
+                    result.insertAdjacentHTML ('beforeend', `<div class="${carts} cartStyle"></div>`)
+                }
+                
+            }else if(agregar.checked == true){
+                if(position.checked == true){
+                    divDelete = result.childNodes[(result.childNodes.length - 1)]
+                    result.removeChild(divDelete);
+                }else{
+                    let divDelete = result.childNodes[1]
+                    result.removeChild(divDelete);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
