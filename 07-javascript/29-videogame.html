@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Memorama</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- CSS -->
+    <!-- efectos visuales -->
+    <style>
+        :root {
+            --w: calc(70vw / 6);
+            --h: calc(70vh / 4);
+        }
+
+        * {
+            transition: all 0.5s;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: url('./images/videogame/c64b3d5d2c87bf9b487212812bd07694--retro-videos-retro-video-games.jpg');
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: calibri;
+        }
+
+        div {
+            display: inline-block;
+        }
+
+        .area-tarjeta,
+        .tarjeta,
+        .cara {
+            cursor: pointer;
+            width: var(--w);
+            min-width: 100px;
+            height: var(--h);
+        }
+
+        .tarjeta {
+            position: relative;
+            transform-style: preserve-3d;
+            animation: iniciar 5s;
+        }
+
+        .cara {
+            position: absolute;
+            backface-visibility: hidden;
+            box-shadow: inset 0 0 0 5px #000000b7;
+            font-size: 500%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .trasera {
+            background-color: rgba(23, 23, 23, 0.834);
+            transform: rotateY(180deg);
+        }
+
+        .superior {
+            background: linear-gradient(rgb(0, 217, 255), #f9d400);
+        }
+
+        .nuevo-juego {
+            cursor: pointer;
+            background: linear-gradient(rgb(0, 217, 255), #f9d400);
+            padding: 20px;
+            border-radius: 50px;
+            border: #000000b7 5px solid;
+            font-size: 130%;
+        }
+
+        h1 {
+            color: rgb(249, 212, 0);
+            font-weight: 900;
+            font-size: 90px;
+            padding: 0;
+            margin: 20px;
+        }
+        span {
+            color: rgb(0, 217, 255);
+        }
+
+        @keyframes iniciar {
+
+            20%,
+            90% {
+                transform: rotateY(180deg);
+            }
+
+            0%,
+            100% {
+                transform: rotateY(0deg);
+            }
+        }
+    </style>
+
+    <body>
+        <h1><span>Memory</span> Game</h1>
+    </body>
+    <div id="tablero">
+    </div>
+
+    <br>
+
+    <div class="nuevo-juego" onclick="generarTablero()">
+        Empezar!
+    </div>
+
+    <script>
+
+        let iconos = []
+        let selecciones = []
+
+        generarTablero()
+
+        function cargarIconos() {
+            iconos = [
+                '<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt80ff58fe809777ff/5db05fa8adc8656c7d24e7d6/RiotX_ChampionList_akali.jpg?quality=90&width=250" width="74%">',
+                '<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt1259276b6d1efa78/5db05fa86e8b0c6d038c5ca2/RiotX_ChampionList_ahri.jpg?quality=90&width=250" width="74%">',
+                '<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt943aae038e2dee98/5db05fa8e9effa6ba5295f91/RiotX_ChampionList_ashe.jpg?quality=90&width=250" width="74%">',
+                '<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt38b52be4a2cb1004/5db05fb19481396d6bdd01ac/RiotX_ChampionList_darius.jpg?quality=90&width=250" width="74%">',
+                '<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt64edf2d3729b57c1/5db05fd656458c6b3fc17519/RiotX_ChampionList_kayn.jpg?quality=90&width=250" width="74%">',
+                '<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt7683195e1c4f6706/621ed30fba043c4a2c4a9f7a/RiotX_ChampionList_mordekaiser_v2.jpg?quality=90&width=250" width="74%">',
+                '<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltf8ea29aa48fc5e35/5db0600cadc8656c7d24e808/RiotX_ChampionList_sylas.jpg?quality=90&width=250" width="74%">',
+                '<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt30ddbbdc0549078a/5db0600da6470d6ab91ce5b8/RiotX_ChampionList_teemo.jpg?quality=90&width=250" width="74%">',
+                '<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt17591d0be6f2888f/600f2aee5ad9610f6cb7880c/RiotX_ChampionList_viego.jpg?quality=90&width=250" width="74%">',
+                '<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltc8b1d1ba926d01cc/5db060036e8b0c6d038c5cba/RiotX_ChampionList_shaco.jpg?quality=90&width=250" width="74%">',
+                '<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt402d6da485218720/5db0601de9effa6ba5295fc5/RiotX_ChampionList_zed.jpg?quality=90&width=250" width="74%">',
+                '<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltf36fa7fd7ecb59fb/5db05fe89481396d6bdd01b8/RiotX_ChampionList_missfortune.jpg?quality=90&width=250" width="74%">',
+            ]
+        }
+
+        function generarTablero() {
+            cargarIconos()
+            let len = iconos.length
+            selecciones = []
+            let tablero = document.getElementById("tablero")
+            let tarjetas = []
+            
+            for (let i = 0; i < len*2; i++) {
+                tarjetas.push(`
+                <div class="area-tarjeta" onclick="seleccionarTarjeta(${i})">
+                    <div class="tarjeta" id="tarjeta${i}">
+                        <div class="cara trasera" id="trasera${i}">
+                            ${iconos[0]}
+                        </div>
+                        <div class="cara superior">
+                            <i class="far fa-question-circle"></i>
+                        </div>
+                    </div>
+                </div>        
+                `)
+                if (i % 2 == 1) {
+                    iconos.splice(0, 1)
+                }
+            }
+            tarjetas.sort(() => Math.random() - 0.5)
+            tablero.innerHTML = tarjetas.join(" ")
+        }
+
+        function seleccionarTarjeta(i) {
+            let tarjeta = document.getElementById("tarjeta" + i)
+            if (tarjeta.style.transform != "rotateY(180deg)") {
+                tarjeta.style.transform = "rotateY(180deg)"
+                selecciones.push(i)
+            }
+            if (selecciones.length == 2) {
+                deseleccionar(selecciones)
+                selecciones = []
+            }
+        }
+
+        function deseleccionar(selecciones) {
+            setTimeout(() => {
+                let trasera1 = document.getElementById("trasera" + selecciones[0])
+                let trasera2 = document.getElementById("trasera" + selecciones[1])
+                if (trasera1.innerHTML != trasera2.innerHTML) {
+                    let tarjeta1 = document.getElementById("tarjeta" + selecciones[0])
+                    let tarjeta2 = document.getElementById("tarjeta" + selecciones[1])
+                    tarjeta1.style.transform = "rotateY(0deg)"
+                    tarjeta2.style.transform = "rotateY(0deg)"
+                }else{
+                    trasera1.style.background = "plum"
+                    trasera2.style.background = "plum"
+                }
+            }, 1000);
+        }
+
+    </script>
+
+</body>
+
+</html>
